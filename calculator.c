@@ -21,16 +21,47 @@ int div(double x, double y) {
 		return x / y;
 	}
 	else {
-		printf("\nError: Division by zero. Ignore next printed line.\n");
+		printf("Error: Division by zero. Ignore next printed line.\n");
 		return 0;
 	}
 }
 
 int main() {
-	double a = 18;
-	double b = 0;
-	printf("The sum of A and B is: %d\n", add(a,b));
-	printf("The difference of A and B is: %d\n", sub(a,b));
-	printf("The product of A and B is: %d\n", mul(a,b));
-	printf("The quotient of A and B is: %d\n", div(a,b));
+	double a, b, result;
+	int choice, n;
+
+	printf("Select operation:\n");
+	printf("1: Add\n2: Subtract\n3: Multiply\n4: Divide\n");
+	scanf("%d", &choice);
+
+	switch (choice) {
+		case 1:
+			printf("Enter two numbers: ");
+			scanf("%lf %lf", &a, &b);
+			result = add(a, b);
+			printf("Result: %.2lf\n", result);
+			break;
+		case 2:
+			printf("Enter two numbers: ");
+			scanf("%lf %lf", &a, &b);
+			result = sub(a, b);
+			printf("Result: %.2lf\n", result);
+			break;
+		case 3:
+			printf("Enter two numbers: ");
+			scanf("%lf %lf", &a, &b);
+			result = mul(a, b);
+			printf("Result: %.2lf\n", result);
+			break;
+		case 4:
+			printf("Enter two numbers: ");
+			scanf("%lf %lf", &a, &b);
+			result = div(a, b);
+			printf("Result: %.2lf\n", result);
+			break;
+		default:
+			printf("Invalid choice!\n");
+	}
+	
+	return 0;
 }
